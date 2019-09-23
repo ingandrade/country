@@ -1,0 +1,31 @@
+<section id="country">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search..." name="filterCountry" [(ngModel)]="filterCountry">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" *ngFor="let country of countrys | filter:filterCountry | paginate: {itemsPerPage: 12, currentPage: pageActual }">
+                <div class="card_country">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p>
+                             <img src="{{country.flag}}" alt="" routerLink ="/country/{{country.name}}">
+                            </p>
+                            <h5  class="card-title" routerLink ="/country/{{country.name}}">{{country.name}}</h5>
+                            <div class="card-text">Capital: {{ country.capital }}</div>
+                            <div>{{ country.region }} - {{ country.subregion}} </div>
+                            <div class="mt-2">
+                                <a class="btn btn-danger text-white " (click)="destroy(country)">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="pageActual = $event" class="text-center"></pagination-controls>
+    </div>
+</section>

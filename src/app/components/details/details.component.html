@@ -1,0 +1,32 @@
+<section id="country">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card_country">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                    <p>
+                                        <img src="{{ country[0].flag }}" alt="">
+                                    </p>
+
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                                    <h4 class="card-title">{{country[0].name }}</h4>
+                                    <div class="card-text">Capital: {{ country[0].capital }}</div>
+                                    <div>{{ country[0].region }} - {{ country[0].subregion }} </div>
+                                    <div>Dominio:  {{ country[0].topLevelDomain }} </div>
+                                    <div>Código:  {{ country[0].alpha2Code }} </div>
+                                    <div>Area: {{ country[0].area }} </div>
+                                    <div>Población: {{ country[0].population }} </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
